@@ -23,9 +23,11 @@
                 <main >
                     <details>
                         <h1>Animali</h1>
+                        <ul>
+                            {animals.map((animal, i) => <li key={i}>{animal}</li>)}
+                        </ul>
                     </details>
-                    <ul>
-                    </ul>
+
                 </main>
             )
         }
