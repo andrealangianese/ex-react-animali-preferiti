@@ -15,8 +15,38 @@
     <!-- Carica Babel (Per compilare JSX in JavaScript leggibile dai browser) -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <script type="text/babel">
+        const { useState } = React;
+        const animals = ['cane', 'gatto', 'tartaruga']
+        const ListaAnimali = () => {
+            return (
+                <main >
+                    <details>
+                        <h1>Animali</h1>
+                    </details>
+                    <ul>
+                    </ul>
+                </main>
+            )
+        }
+    </script>
+    <script type="text/babel">
+        const { createRoot } = ReactDOM;
+
+        const listaAnimali = document.querySelector('.lista-animali')
+        console.log(listaAnimali);
+
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- 
+Monta un componente React all’interno dell’elemento con classe .lista-animali.
+
+Il componente deve includere:
+Un elemento <details> con titolo "Animali", che contiene:
+Una lista <ul> statica che viene creata a partire da un array di stringhe (animals) dove ciascuna stringa rappresenta il nome di un animale.
+
+Obiettivo: Mostrare la struttura base della lista di animali con un <details> che può essere espanso o contratto. -->
 
 <body>
     <header>
