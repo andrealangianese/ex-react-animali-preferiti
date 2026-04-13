@@ -34,8 +34,8 @@
         const { createRoot } = ReactDOM;
 
         const listaAnimali = document.querySelector('.lista-animali')
-        console.log(listaAnimali);
-
+        const root = createRoot(listaAnimali)
+        root.render(<ListaAnimali />)
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
