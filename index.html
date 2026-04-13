@@ -17,12 +17,19 @@
 
     <script type="text/babel">
         const { useState } = React;
-        const animals = ['cane', 'gatto', 'tartaruga']
         const ListaAnimali = () => {
+            const [animals, setAnimals] = useState([]);
+            const animalsChoices = ["Cane", "Gatto", "Pappagallo", "Cavallo", "Panda"];
+            const aggiungi = () => {
+                const randomAnimal = animalsChoices[Math.floor(Math.random() * animalsChoices.length)];
+
+                setAnimals(vecchiAnimals => [...vecchiAnimals, randomAnimal]);
+            };
             return (
                 <main >
+                    <button onClick={aggiungi}>Aggiungi animale</button>
                     <details>
-                        <h1>Animali</h1>
+                        <summary>Animali</summary>
                         <ul>
                             {animals.map((animal, i) => <li key={i}>{animal}</li>)}
                         </ul>
@@ -42,13 +49,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <!-- 
-Monta un componente React all’interno dell’elemento con classe .lista-animali.
+Trasforma l’array animals usando useState (l’array è inizialmente vuoto).
+Aggiungi un bottone "Aggiungi Animale" sopra il <details>.
+Cliccando il bottone, un animale casuale viene aggiunto alla lista.
+Usa un array predefinito per scegliere casualmente:
+const animalsChoices = ["Cane", "Gatto", "Pappagallo", "Cavallo", "Panda"];
+L’animale selezionato deve essere aggiunto all’interno della lista <ul> come <li>.
 
-Il componente deve includere:
-Un elemento <details> con titolo "Animali", che contiene:
-Una lista <ul> statica che viene creata a partire da un array di stringhe (animals) dove ciascuna stringa rappresenta il nome di un animale.
-
-Obiettivo: Mostrare la struttura base della lista di animali con un <details> che può essere espanso o contratto. -->
+Obiettivo: L’utente può vedere gli animali aggiunti dinamicamente nella lista. -->
 
 <body>
     <header>
